@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "play-with-poteryashka"
 include ':app'
+include ':core'
