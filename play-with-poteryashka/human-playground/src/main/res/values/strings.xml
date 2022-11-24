@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="catch_a_mouse">Поймай мышку</string>
+    <string name="game_hint_not_paid">Для запуска игры на 10 минут переведите пожертвование от 100 руб.</string>
+    <string name="game_hint_paid">Нажимая \"Играть\" вы резервируете комнату на 10 минут</string>
+    <string name="game_hint_timer_format_string">Время резервирования: %1$s:%2$s</string>
+    <string name="game_hint_standby">Идёт загрузка данных игрого поля</string>
+    <string name="make_a_donation">Внести пожертвование</string>
+    <string name="launch_game">Играть</string>
+    <string name="watch_game">Наблюдать</string>
+</resources>

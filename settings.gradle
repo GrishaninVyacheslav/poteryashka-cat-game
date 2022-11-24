@@ -13,5 +13,13 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "play-with-poteryashka"
-include ':app'
 include ':core'
+include ':core-ui'
+include ':game-catch-a-mouse'
+include ':play-with-poteryashka:app'
+include ':play-with-poteryashka:navigation'
+include ':play-with-poteryashka:human-playground'
+include ':play-with-poteryashka:rooms-list'
+include ':poteryashka-playground:app'
+include ':poteryashka-playground:navigation'
+include ':poteryashka-playground:playground'
