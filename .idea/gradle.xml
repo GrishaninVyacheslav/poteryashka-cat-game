@@ -18,6 +18,11 @@
             <option value="$PROJECT_DIR$/play-with-poteryashka/human-playground" />
             <option value="$PROJECT_DIR$/play-with-poteryashka/navigation" />
             <option value="$PROJECT_DIR$/play-with-poteryashka/rooms-list" />
+            <option value="$PROJECT_DIR$/poteryashka-admin" />
+            <option value="$PROJECT_DIR$/poteryashka-admin/app" />
+            <option value="$PROJECT_DIR$/poteryashka-admin/details" />
+            <option value="$PROJECT_DIR$/poteryashka-admin/list" />
+            <option value="$PROJECT_DIR$/poteryashka-admin/navigation" />
             <option value="$PROJECT_DIR$/poteryashka-playground" />
             <option value="$PROJECT_DIR$/poteryashka-playground/app" />
             <option value="$PROJECT_DIR$/poteryashka-playground/navigation" />
