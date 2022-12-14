@@ -22,4 +22,8 @@ abstract class BaseFragment<Binding : ViewBinding> protected constructor(
     protected fun showErrorMessage(error: Throwable) {
         Toast.makeText(requireContext(), error.message, Toast.LENGTH_LONG).show()
     }
+
+    protected fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+    }
 }

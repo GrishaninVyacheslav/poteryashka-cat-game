@@ -1,0 +1,3 @@
+package io.github.grishaninvyacheslav.core_ui.presentation
+
+interface DisplayableItem

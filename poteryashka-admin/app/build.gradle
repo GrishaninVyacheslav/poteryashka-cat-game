@@ -1,14 +1,15 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
-    namespace 'io.github.poteryashkagame.poteryashka_admin.app'
+    namespace 'io.github.poteryashkagame.poteryashka_admin'
     compileSdk 33
 
     defaultConfig {
-        applicationId "io.github.poteryashkagame.poteryashka_admin.app"
+        applicationId "io.github.poteryashkagame.poteryashka_admin"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -41,4 +42,10 @@ dependencies {
     implementation project(path: ':poteryashka-admin:navigation')
     implementation project(path: ':poteryashka-admin:list')
     implementation project(path: ':poteryashka-admin:details')
+    implementation project(path: ':poteryashka-admin:pets-list')
+    implementation project(path: ':poteryashka-admin:pets-editor')
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:31.0.1')
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
 }

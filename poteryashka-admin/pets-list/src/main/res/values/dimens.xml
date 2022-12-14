@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="outer_margin">20dp</dimen>
+    <dimen name="card_item_corner_radius">25dp</dimen>
+    <dimen name="card_item_elevation">15dp</dimen>
+    <dimen name="title_size">20sp</dimen>
+</resources>
