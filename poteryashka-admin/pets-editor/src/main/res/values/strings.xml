@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name_input_hint">Name</string>
+    <string name="breed_input_hint">Breed</string>
+    <string name="age_input_hint">Age</string>
+    <string name="description_input_hint">Description</string>
+    <string name="remove">remove</string>
+    <string name="save">save</string>
+    <string name="retry">retry</string>
+</resources>

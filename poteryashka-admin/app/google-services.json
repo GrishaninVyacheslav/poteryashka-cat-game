@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "595737153869",
+    "firebase_url": "https://cat-game-proto-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cat-game-proto",
+    "storage_bucket": "cat-game-proto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595737153869:android:db7106f8d6c05cc688e704",
+        "android_client_info": {
+          "package_name": "io.github.grishaninvyacheslav.play_with_poteryashka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzhgtEu-gP-B6S22FKoEh4_7K1HSKmjhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595737153869:android:7e5121ac0e5bd35c88e704",
+        "android_client_info": {
+          "package_name": "io.github.grishaninvyacheslav.poteryashka_playground"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzhgtEu-gP-B6S22FKoEh4_7K1HSKmjhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595737153869:android:da6911bff55f280c88e704",
+        "android_client_info": {
+          "package_name": "io.github.poteryashkagame.poteryashka_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzhgtEu-gP-B6S22FKoEh4_7K1HSKmjhU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595737153869-mpslpihemsddgrspl2l4t7h6mtlbunrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

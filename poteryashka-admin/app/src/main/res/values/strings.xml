@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">poteryashka-admin</string>
+    <string name="playgrounds">Rooms</string>
+    <string name="pets">Pets</string>
 </resources>
