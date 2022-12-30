@@ -33,6 +33,7 @@ class CatchAMouseHumanSideFragment :
     }
 
     private fun renderPlaygroundState(state: PlaygroundState){
+        Log.d("[PLAYLOG]", "renderPlaygroundState $state")
         when(state){
             PlaygroundState.Loading -> binding.progressBar.isVisible = true
             PlaygroundState.Success -> {

@@ -120,7 +120,6 @@ class HumanPlaygroundFragment :
             CatchAMouseHumanSideFragment.newInstance(),
             "CATCH_A_MOUSE_GAME_FRAGMENT"
         )
-        transaction.addToBackStack(null)
         transaction.commit()
     }
 
