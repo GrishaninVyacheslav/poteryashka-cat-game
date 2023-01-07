@@ -9,6 +9,6 @@ class NavigateToHumanPlaygroundUseCaseImpl(
     private val router: Router
 ) : NavigateToHumanPlaygroundUseCase {
     override fun invoke() =
-        router.replaceScreen(FragmentScreen { HumanPlaygroundFragment.newInstance() })
+        router.navigateTo(FragmentScreen { HumanPlaygroundFragment.newInstance() })
 
 }

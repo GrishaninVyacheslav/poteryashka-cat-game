@@ -39,6 +39,8 @@ class DonationFragment : BaseFragment<FragmentDonationBinding>(FragmentDonationB
             }
 
             override fun onPageFinished(view: WebView?, url: String?) {
+                viewModel.receiveDonation(2F) // TODO: Remove this line. It is for testing purposes
+
                 if (url != null) {
                     if (url.startsWith("http://poteryashka.spb.ru/payments/robokassa/success/")) {
                         viewModel.receiveDonation(url.substringAfter("OutSum=").substringBefore('&').toFloat())

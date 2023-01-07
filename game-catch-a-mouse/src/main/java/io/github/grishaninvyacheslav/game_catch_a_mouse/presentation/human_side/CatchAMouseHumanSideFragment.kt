@@ -27,28 +27,51 @@ class CatchAMouseHumanSideFragment :
             setContent {
                 val playgroundLocationOnScreen = IntArray(2)
                 binding.mapComposeView.getLocationOnScreen(playgroundLocationOnScreen)
-                Playground(viewModel, Offset(playgroundLocationOnScreen[0].toFloat(), playgroundLocationOnScreen[1].toFloat()))
+                Playground(
+                    viewModel,
+                    Offset(
+                        playgroundLocationOnScreen[0].toFloat(),
+                        playgroundLocationOnScreen[1].toFloat()
+                    )
+                )
             }
         }
     }
 
-    private fun renderPlaygroundState(state: PlaygroundState){
+    private fun renderPlaygroundState(state: PlaygroundState) {
         Log.d("[PLAYLOG]", "renderPlaygroundState $state")
-        when(state){
-            PlaygroundState.Loading -> binding.progressBar.isVisible = true
-            PlaygroundState.Success -> {
-                binding.progressBar.isVisible = false
-                binding.mapComposeView.apply {
+        when (state) {
+            PlaygroundState.Loading -> {
+                setProgressBar(true)
+            }
+            PlaygroundState.Success -> with(binding) {
+                setProgressBar(false)
+                mapComposeView.apply {
                     setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
                     setContent {
                         val playgroundLocationOnScreen = IntArray(2)
-                        binding.mapComposeView.getLocationOnScreen(playgroundLocationOnScreen)
-                        Playground(viewModel, Offset(playgroundLocationOnScreen[0].toFloat(), playgroundLocationOnScreen[1].toFloat()))
+                        mapComposeView.getLocationOnScreen(playgroundLocationOnScreen)
+                        Playground(
+                            viewModel,
+                            Offset(
+                                playgroundLocationOnScreen[0].toFloat(),
+                                playgroundLocationOnScreen[1].toFloat()
+                            )
+                        )
                     }
                 }
             }
-            is PlaygroundState.Error -> Toast.makeText(requireContext(), state.error.message, Toast.LENGTH_LONG).show()
+            is PlaygroundState.Error -> Toast.makeText(
+                requireContext(),
+                state.error.message,
+                Toast.LENGTH_LONG
+            ).show()
         }
+    }
+
+    private fun setProgressBar(isInProgress: Boolean) = with(binding) {
+        progressBar.isVisible = isInProgress
+        mapComposeView.isVisible = !isInProgress
     }
 
     private val viewModel: CatchAMouseHumanSideViewModelImpl by viewModel()

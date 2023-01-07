@@ -12,7 +12,7 @@ import java.util.*
 class DonationRepositoryImpl(
     private val cloudDatabase: FirebaseFirestore
 ) : DonationRepository {
-    private var guid: String? = "test" // TODO: заменить на null
+    private var guid: String? = null
     private var timeToPaymentTariff: TimeToPaymentTariff? = null
     private var currentPayment = 0F
 
