@@ -59,8 +59,8 @@ class HumanPlaygroundFragment :
             }
             is PlaygroundState.Reserved -> with(binding) {
                 progressBar.isVisible = false
-                initTimer(state.secondsInFuture)
-                launch.text = getString(R.string.watch_game)
+                initTimer(state.secondsInFuture, getString(R.string.game_hint_timer_when_reserved_format_string))
+                launch.text = getString(R.string.refresh)
                 closeGame()
                 playgroundContainer.isVisible = false
                 gameOption.isVisible = true
@@ -77,20 +77,28 @@ class HumanPlaygroundFragment :
             }
             is PlaygroundState.Playing -> {
                 binding.progressBar.isVisible = false
-                initTimer(state.secondsInFuture)
+                initTimer(state.secondsInFuture, getString(R.string.game_hint_timer_when_playing_format_string))
                 launchGame()
+            }
+            is PlaygroundState.Maintaining -> with(binding){
+                progressBar.isVisible = false
+                gameHint.text = state.message
+                gameHint.isVisible = true
+                playgroundContainer.isVisible = false
+                gameOption.isVisible = false
+                launch.text = getString(R.string.refresh)
+                launch.isVisible = true
             }
         }
     }
 
-    private fun initTimer(secondsInFuture: Long) {
+    private fun initTimer(secondsInFuture: Long, gameHintTimerFormatString: String) {
         Log.d("[MYLOG]", "initTimer secondsInFuture: $secondsInFuture")
         binding.gameHint.text = getString(R.string.game_hint_standby)
         binding.gameHint.isVisible = true
         if(secondsInFuture < 0){
             viewModel.timestampExpiration()
         }
-        val gameHintTimerFormatString = getString(R.string.game_hint_timer_format_string)
         object : CountDownTimer(secondsInFuture * 1000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val secondsLeft = millisUntilFinished / 1000

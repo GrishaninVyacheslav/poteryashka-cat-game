@@ -60,11 +60,16 @@ class PlaygroundUseCaseImpl(
                     PlaygroundReservationStatusEntity(
                         it["curr_id"] as String,
                         it["expiration_timestamp"] as Long,
-                        it["paid_ids"] as MutableList<String>
+                        it["paid_ids"] as MutableList<String>,
+                        it["maintaining_message"] as String
                     )
                 ) {
+                    if(this.maintaining_message.isNotEmpty()){
+                        mutablePlaygroundState.postValue(PlaygroundState.Maintaining(this.maintaining_message))
+                        return@with
+                    }
                     val currentSeconds = timeProvider.getEpochSeconds()
-                    if(this.curr_id == donationRepository.getId() && this.expiration_timestamp > currentSeconds){
+                    if (this.curr_id == donationRepository.getId() && this.expiration_timestamp > currentSeconds) {
                         mutablePlaygroundState.postValue(
                             PlaygroundState.Playing(this.expiration_timestamp - currentSeconds)
                         )
@@ -90,7 +95,10 @@ class PlaygroundUseCaseImpl(
         val currentSeconds = timeProvider.getEpochSeconds()
         Log.d("[MYLOG]", "launchGame tariffSeconds: $tariffSeconds")
         val expirationTimestamp = currentSeconds + tariffSeconds
-        Log.d("[MYLOG]", "launchGame expirationTimestamp: $expirationTimestamp") // TODO: expirationTimestamp отправлять в при playground_status == READY и после этого присваивать PLAYING
+        Log.d(
+            "[MYLOG]",
+            "launchGame expirationTimestamp: $expirationTimestamp"
+        ) // TODO: expirationTimestamp отправлять в при playground_status == READY и после этого присваивать PLAYING
         reservationStatus.expiration_timestamp = expirationTimestamp
         cloudDatabase
             .collection("reservation_status")
@@ -100,7 +108,8 @@ class PlaygroundUseCaseImpl(
             .getReference("playground_1")
             .child("catch_a_mouse")
             .child("expiration_timestamp")
-            .setValue(expirationTimestamp).await() // TODO: вместо expirationTimestamp отправлять playground_status: STANDBY
+            .setValue(expirationTimestamp)
+            .await() // TODO: вместо expirationTimestamp отправлять playground_status: STANDBY
 
         // TODO: Playing присваивать в слушателе playground_status, когда он равен READY
         mutablePlaygroundState.postValue(

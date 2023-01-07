@@ -3,9 +3,11 @@
     <string name="catch_a_mouse">Поймай мышку</string>
     <string name="game_hint_not_paid">Для запуска игры на 10 минут переведите пожертвование от 100 руб.</string>
     <string name="game_hint_paid">Нажимая \"Играть\" вы резервируете комнату на 10 минут</string>
-    <string name="game_hint_timer_format_string">Время резервирования: %1$s:%2$s</string>
-    <string name="game_hint_standby">Идёт загрузка данных игрого поля</string>
+    <string name="game_hint_timer_when_playing_format_string">Комната зарезервирована вами на: %1$s:%2$s</string>
+    <string name="game_hint_timer_when_reserved_format_string">Комната зарезервирована другим пользователем на: %1$s:%2$s</string>
+    <string name="game_hint_standby">Устанавливается сзязь с планшетом котят</string>
     <string name="make_a_donation">Внести пожертвование</string>
     <string name="launch_game">Играть</string>
     <string name="watch_game">Наблюдать</string>
+    <string name="refresh">Обновить данные</string>
 </resources>

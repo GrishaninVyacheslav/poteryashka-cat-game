@@ -46,8 +46,11 @@ class PlaygroundViewModel(
                     playgroundUseCase.tryLaunchGame()
                 }
             }
-            is PlaygroundState.Reserved -> {
-
+            is PlaygroundState.Reserved, is PlaygroundState.Maintaining -> {
+                mutablePlaygroundState.value = PlaygroundState.Loading
+                viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+                    playgroundUseCase.updateState()
+                }
             }
             PlaygroundState.Loading, null -> {
 

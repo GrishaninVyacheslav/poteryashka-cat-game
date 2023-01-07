@@ -11,4 +11,6 @@ sealed class PlaygroundState {
     object Paid: PlaygroundState()
     /** Текущий пользователь занял комнату */
     data class Playing(val secondsInFuture: Long): PlaygroundState()
+    /** Игра в комнате не доступна */
+    data class Maintaining(val message: String): PlaygroundState()
 }
